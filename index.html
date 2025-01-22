@@ -31,7 +31,9 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">About</a></li>
-								<li><a href="#work">Projects</a></li>
+								<li><a href="#work">Websites</a></li>
+								<li><a href="#drawings">Artworks</a></li>
+								<li><a href="#contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -48,7 +50,7 @@
 									<div id="profile-id" class="social">
 							
 										<a href="http://www.linkedin.com/in/jay-vee-manalabe-33644b123" target=”_blank”><span class="icon brands fa-linkedin"></span><a></a></span></a>
-										<a href="mailto: manalabe.jayvee@gmail.com" target=”_blank”><span class="icon solid fa-envelope"></span></span></a>
+										<a href="mailto: manalabe.viejay10@gmail.com" target=”_blank”><span class="icon solid fa-envelope"></span></span></a>
 										<a href="https://www.instagram.com/jlmanalabe" target=”_blank”><span class="icon brands fa-instagram"></span></a>
 										<a href="https://www.deviantart.com/jmanalabe" target=”_blank”><span class="icon solid fa-paint-roller"></span></a>
 										
@@ -64,6 +66,8 @@
 
 						<!-- Projects -->
 							<article id="work">
+							
+							
 								<h2 class="major">Websites</h2>
 								<div class="project-container">
 									<div class="projects">
@@ -97,9 +101,107 @@
 									</div>
 								</div>
 
+
+							
+
 							</article>
 
 						
+						<article id="drawings">
+							<h2 class="major">Artworks</h2>
+
+							<section class="gallery mt-5">
+								<section class="p-0 container">
+								<div class="row d-flex"> 
+								
+									<div class="lightbox_img_wrap">
+									  <img class="lightbox-enabled" src="/images/d1.jpg" 
+							data-imgsrc="/images/d1.jpg">
+									</div>  
+								 
+									
+									<div class="lightbox_img_wrap">
+										<img class="lightbox-enabled" src="/images/d2.jpg" 
+										data-imgsrc="/images/d2.jpg">
+												</div>  
+								
+										
+									<div class="lightbox_img_wrap">
+										<img class="lightbox-enabled" src="/images/d3.jpg" 
+										data-imgsrc="/images/d3.jpg">
+												</div>   
+								 
+										
+									<div class="lightbox_img_wrap">
+										<img class="lightbox-enabled" src="/images/d4.jpg" 
+										data-imgsrc="/images/d4.jpg">
+												</div>   
+								  
+											
+									<div class="lightbox_img_wrap">
+										<img class="lightbox-enabled" src="/images/d5.jpg" 
+										data-imgsrc="/images/d5.jpg">
+												</div>  
+								  
+											
+									<div class="lightbox_img_wrap">
+										<img class="lightbox-enabled" src="/images/d6.png" 
+										data-imgsrc="/images/d6.png">
+												</div>  
+								 
+												<div class="lightbox_img_wrap">
+													<img class="lightbox-enabled" src="/images/d7.jpg" 
+													data-imgsrc="/images/d7.jpg">
+															</div>  
+
+															<div class="lightbox_img_wrap">
+																<img class="lightbox-enabled" src="/images/d8.jpg" 
+																data-imgsrc="/images/d8.jpg">
+																		</div>  
+
+																		<div class="lightbox_img_wrap">
+																			<img class="lightbox-enabled" src="/images/d9.jpg" 
+																			data-imgsrc="/images/d9.jpg">
+																					</div> 
+																					
+																					<div class="lightbox_img_wrap">
+																						<img class="lightbox-enabled" src="/images/d10.jpg" 
+																						data-imgsrc="/images/d10.jpg">
+																								</div>  
+																								
+							   </div>  
+								</section>
+							</section>
+								<section class="lightbox-container">
+							
+							  <span class="icon solid fa-arrow-left lightbox-btn left" id="left">
+						
+							</span>
+							  <span class="icon solid fa-arrow-right lightbox-btn right" id="right">
+						
+							</span>
+							<span id="close" class="close material-icons material-symbols-outlined">
+							close
+							</span>
+							  <div class="lightbox-image-wrapper">
+							  <img alt="lightboximage" class="lightbox-image">
+								 
+								
+							  </div>
+							</section>
+						</article>
+							<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact Me</h2>
+								<div class="social contact-me">
+									<p>Let's create something amazing together! Contact me now!</p>
+					
+									<a href="mailto: manalabe.viejay10@gmail.com" target=”_blank”><span class="icon solid fa-envelope"></span></span> manalabe.viejay10@gmail.com</a>
+						
+								</div>
+								
+								
+							</article>
 
 					</div>
 
@@ -108,7 +210,7 @@
 						<div class="social">
 							
 							<a href="http://www.linkedin.com/in/jay-vee-manalabe-33644b123" target=”_blank”><span class="icon brands fa-linkedin"></span><a></a></span></a>
-							<a href="mailto: manalabe.jayvee@gmail.com" target=”_blank”><span class="icon solid fa-envelope"></span></span></a>
+							<a href="mailto: manalabe.viejay10@gmail.com" target=”_blank”><span class="icon solid fa-envelope"></span></span></a>
 							<a href="https://www.instagram.com/jlmanalabe" target=”_blank”><span class="icon brands fa-instagram"></span></a>
 							<a href="https://www.deviantart.com/jmanalabe" target=”_blank”><span class="icon solid fa-paint-roller"></span></a>
 										
@@ -129,18 +231,77 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				import lightGallery from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.3";
+				// Lightbox Gallery
 
-import lgZoom from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.3/plugins/zoom";
+// query selectors
+const lightboxEnabled = document.querySelectorAll('.lightbox-enabled');
+const lightboxArray = Array.from(lightboxEnabled);
+const lastImage = lightboxArray.length-1;
+const lightboxContainer = document.querySelector('.lightbox-container');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxBtns = document.querySelectorAll('.lightbox-btn');
+const lightboxBtnRight = document.querySelector('#right');
+const lightboxBtnLeft = document.querySelector('#left');
+const close = document.querySelector('#close');
+let activeImage;
+// Functions
+const showLightBox = () => {lightboxContainer.classList.add('active')}
 
-import lgShare from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.3/plugins/share";
+const hideLightBox = () => {lightboxContainer.classList.remove('active')}
 
-import lgHash from "https://cdn.skypack.dev/lightgallery@2.0.0-beta.3/plugins/hash";
+const setActiveImage = (image) => {
+lightboxImage.src = image.dataset.imgsrc;
+activeImage= lightboxArray.indexOf(image);
+}
 
-lightGallery(document.getElementById("gallery-container"), {
-  speed: 500,
-  plugins: [lgZoom, lgShare, lgHash]
-});
+const transitionSlidesLeft = () => {
+  lightboxBtnLeft.focus();
+  $('.lightbox-image').addClass('slideright'); 
+   setTimeout(function() {
+  activeImage === 0 ? setActiveImage(lightboxArray[lastImage]) : setActiveImage(lightboxArray[activeImage-1]);
+}, 250); 
+
+
+  setTimeout(function() {
+    $('.lightbox-image').removeClass('slideright');
+}, 500);   
+}
+
+const transitionSlidesRight = () => {
+ lightboxBtnRight.focus();
+$('.lightbox-image').addClass('slideleft');  
+  setTimeout(function() {
+   activeImage === lastImage ? setActiveImage(lightboxArray[0]) : setActiveImage(lightboxArray[activeImage+1]);
+}, 250); 
+  setTimeout(function() {
+    $('.lightbox-image').removeClass('slideleft');
+}, 500);  
+}
+
+const transitionSlideHandler = (moveItem) => {
+  moveItem.includes('left') ? transitionSlidesLeft() : transitionSlidesRight();
+}
+
+// Event Listeners
+lightboxEnabled.forEach(image => {
+   image.addEventListener('click', (e) => {
+    showLightBox();
+    setActiveImage(image);
+    })                     
+    })
+lightboxContainer.addEventListener('click', () => {hideLightBox()})
+close.addEventListener('click', () => {hideLightBox()})
+lightboxBtns.forEach(btn => {
+btn.addEventListener('click', (e) => {
+e.stopPropagation();
+  transitionSlideHandler(e.currentTarget.id);
+})
+})
+
+lightboxImage.addEventListener('click', (e) => {
+e.stopPropagation();
+
+})
 
 			</script>
 
